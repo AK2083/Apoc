@@ -1,0 +1,24 @@
+name: Test Workflow
+
+on:
+  push:
+    branches:
+    - '**'
+
+permissions: read-all
+      
+jobs:
+  build:
+    name: Build Project
+    runs-on: ubuntu-latest
+    permissions: 
+      checks: write
+      
+    steps:
+    - name: Lint Code Base
+      uses: super-linter/super-linter@v5
+      env:
+        VALIDATE_CSHARP: true
+        VALIDATE_ALL_CODEBASE: true
+        DEFAULT_BRANCH: master
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
