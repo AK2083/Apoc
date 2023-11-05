@@ -66,6 +66,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           skip-version-file: 'true'
+          git-branch: 'master'
 
   pack_nuget:
     runs-on: ubuntu-latest
