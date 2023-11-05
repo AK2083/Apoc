@@ -2,6 +2,9 @@
 
 namespace Apoc
 {
+    /// <summary>
+    /// Null Object
+    /// </summary>
     public sealed class NullTax : ITax
     {
         private static readonly ITax nullTax = new NullTax();
