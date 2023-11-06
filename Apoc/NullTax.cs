@@ -3,7 +3,7 @@
 namespace Apoc
 {
     /// <summary>
-    /// Null Object
+    /// Null Object for main app
     /// </summary>
     public sealed class NullTax : ITax
     {
