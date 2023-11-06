@@ -1,3 +1,12 @@
+## [0.2.2](https://github.com/AK2083/Apoc/compare/v0.2.1...v0.2.2) (2023-11-06)
+
+
+### Bug Fixes
+
+* **Apoc:** correct comment ([930d423](https://github.com/AK2083/Apoc/commit/930d42341aaa41468863e800203297d15faef413))
+
+
+
 ## [0.2.1](https://github.com/AK2083/Apoc/compare/v0.2.0...v0.2.1) (2023-11-06)
 
 
