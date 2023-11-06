@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/AK2083/Apoc/compare/v0.2.0...v0.2.1) (2023-11-06)
+
+
+### Bug Fixes
+
+* **Apoc:** add null tax object ([9639ac5](https://github.com/AK2083/Apoc/commit/9639ac59cfd746f7897b5a22842693bd4591fafb))
+
+
+
 # [0.2.0](https://github.com/AK2083/Apoc/compare/v0.1.0...v0.2.0) (2023-11-05)
 
 
