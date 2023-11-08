@@ -62,7 +62,8 @@ jobs:
           output-file: 'CHANGELOG.md'
 
   pack_nuget:
-    permissions: write-all
+    permissions: 
+      packages: write
     runs-on: ubuntu-latest
     needs: create_nuget
     steps:
