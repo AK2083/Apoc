@@ -68,11 +68,6 @@ jobs:
     needs: create_nuget
     steps:
     - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
-
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@3447fd6a9f9e57506b15f895c5b76d3b197dc7c2 # v3.2.0
-      with:
-        dotnet-version: 6.0.x
         
     - name: Add Github as NuGet Source
       run: dotnet nuget add source --username AK2083 --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/AK2083/index.json"
