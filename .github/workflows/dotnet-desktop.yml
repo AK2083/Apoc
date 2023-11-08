@@ -66,11 +66,6 @@ jobs:
     needs: create_nuget
     steps:
     - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
-
-    - name: restore packages
-      run: |
-        dotnet nuget add source "https://nuget.pkg.github.com/AK2083/index.json" --name "github" --username "AK2083" --password "${{ secrets.GH_NUGET_PACKAGE_PAT }}" --store-password-in-clear-text
-        dotnet restore ${{ github.workspace}}/Apoc/Apoc.csproj
         
     - name: pack
       run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }} -p:PackageVersion=${{ needs.create_nuget.outputs.newTag }}
@@ -81,6 +76,8 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Create github-feed
-      run: dotnet nuget add source --username AK2083 --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/AK2083/index.json"
+      run: |
+        dotnet nuget add source --username AK2083 --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/AK2083/index.json"
+        dotnet restore ${{ github.workspace}}/Apoc/Apoc.csproj
     - name: Publish NuGet package
       run: dotnet nuget push "${{ env.NuGetDirectory }}/*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github" --skip-duplicate
