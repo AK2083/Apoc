@@ -8,10 +8,18 @@ jobs:
   build:
     name: Build Project
     runs-on: ubuntu-latest
-    permissions: 
-      checks: write
+    
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
       
     steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+          
     - name: Lint Code Base
       uses: super-linter/super-linter@v5
       env:
