@@ -1,9 +1,6 @@
 name: Test Workflow
 
-on:
-  push:
-    branches:
-    - '**'
+on: push
 
 permissions: read-all
       
